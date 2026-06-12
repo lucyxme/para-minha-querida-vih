@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para minha querida vih ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#fff8fa;
+    color:#555;
+    overflow-x:hidden;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(to bottom,#ffdbe7,#fff8fa);
+}
+
+h1{
+    color:#ff5f92;
+    margin-bottom:15px;
+}
+
+.subtitulo{
+    max-width:600px;
+    margin:auto;
+    line-height:1.6;
+}
+
+.card{
+    background:white;
+    margin:20px;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,.08);
+}
+
+.contador{
+    text-align:center;
+}
+
+#tempo{
+    color:#ff5f92;
+    margin-top:10px;
+    font-size:1.2rem;
+    font-weight:bold;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    padding:20px;
+}
+
+.galeria img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(255,182,193,.4);
+}
+
+button{
+    border:none;
+    background:#ff8fb1;
+    color:white;
+    padding:15px 25px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+.carta{
+    display:none;
+    margin-top:20px;
+    line-height:1.8;
+}
+
+.musica{
+    text-align:center;
+    margin:20px;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#999;
+}
+
+.coracao{
+    position:fixed;
+    color:pink;
+    animation:subir 8s linear infinite;
+    opacity:.6;
+    pointer-events:none;
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Para Ana Vitória ❤️</h1>
+
+<p class="subtitulo">
+Desde 25 de abril de 2026, meus dias ficaram mais leves,
+mais bonitos e muito mais felizes.
+Você é minha pessoa favorita,
+minha única garota,
+e uma das melhores partes da minha vida.
+💕
+</p>
+
+</header>
+
+<div class="card contador">
+<h2>Estamos juntas há</h2>
+<p id="tempo"></p>
+</div>
+
+<div class="card">
+
+<h2>Nossos momentos 📸</h2>
+
+<div class="galeria">
+
+<img src="lego.jpg">
+<img src="abducao.jpg">
+<img src="favoritegirl.jpg">
+<img src="flores.jpg">
+<img src="bone.jpg">
+<img src="kimono.jpg">
+
+</div>
+
+</div>
+
+<div class="musica">
+
+<a href="https://www.youtube.com/results?search_query=No+Céu+Dos+Braços+Teus+Di+Paullo+e+Paulino"
+target="_blank">
+
+<button>
+🎵 Nossa Música
+</button>
+
+</a>
+
+</div>
+
+<div class="card">
+
+<center>
+
+<button onclick="abrirCarta()">
+💌 Abrir Carta
+</button>
+
+</center>
+
+<div class="carta" id="carta">
+
+<p>
+Ana Vitória,
+</p>
+
+<br>
+
+<p>
+Eu poderia escrever centenas de linhas de código
+e ainda assim não conseguir explicar tudo o que sinto por você.
+</p>
+
+<br>
+
+<p>
+Desde o dia 25/04/2026 você transformou meus dias,
+me fez sorrir mais, sonhar mais e amar mais.
+</p>
+
+<br>
+
+<p>
+Obrigada por cada conversa,
+cada carinho,
+cada momento,
+e por ser exatamente quem você é.
+</p>
+
+<br>
+
+<p>
+Você é minha pessoa favorita.
+Meu lugar favorito.
+Meu futuro favorito.
+</p>
+
+<br>
+
+<p>
+Eu te amo infinitamente. ❤️
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+Feito com todo o amor do mundo ❤️
+
+</footer>
+
+<script>
+
+const inicio = new Date("2026-04-25T00:00:00");
+
+function atualizarContador(){
+
+const agora = new Date();
+
+const diferenca = agora - inicio;
+
+const dias = Math.floor(diferenca/(1000*60*60*24));
+const horas = Math.floor(diferenca/(1000*60*60))%24;
+const minutos = Math.floor(diferenca/(1000*60))%60;
+
+document.getElementById("tempo").innerHTML =
+`${dias} dias, ${horas} horas e ${minutos} minutos ❤️`;
+
+}
+
+setInterval(atualizarContador,1000);
+atualizarContador();
+
+function abrirCarta(){
+
+const carta = document.getElementById("carta");
+
+if(carta.style.display==="block"){
+carta.style.display="none";
+}else{
+carta.style.display="block";
+}
+
+}
+
+function criarCoracao(){
+
+const coracao = document.createElement("div");
+
+coracao.classList.add("coracao");
+
+coracao.innerHTML="💗";
+
+coracao.style.left=Math.random()*100+"vw";
+coracao.style.fontSize=(Math.random()*20+15)+"px";
+
+document.body.appendChild(coracao);
+
+setTimeout(()=>{
+coracao.remove();
+},8000);
+
+}
+
+setInterval(criarCoracao,500);
+
+</script>
+
+</body>
+</html>
